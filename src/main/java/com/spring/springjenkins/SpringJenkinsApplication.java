@@ -20,7 +20,7 @@ public class SpringJenkinsApplication {
 		logger.info("hi........");
 	}
 	@PreDestroy
-	public void destroy()
+	public destroy()
 	{
 		logger.info("destroy method invoked........");
 	}
