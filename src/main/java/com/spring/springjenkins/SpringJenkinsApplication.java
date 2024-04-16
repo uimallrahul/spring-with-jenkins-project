@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
 @SpringBootApplication
 public class SpringJenkinsApplication {
@@ -16,6 +17,11 @@ public class SpringJenkinsApplication {
 	public void init()
 	{
 		logger.info("init method invoked........");
+	}
+	@PreDestroy
+	public void destroy()
+	{
+		logger.info("destroy method invoked........");
 	}
 
 	public static void main(String[] args) {
