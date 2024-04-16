@@ -17,6 +17,7 @@ public class SpringJenkinsApplication {
 	public void init()
 	{
 		logger.info("init method invoked........");
+		logger.info("hi........");
 	}
 	@PreDestroy
 	public void destroy()
