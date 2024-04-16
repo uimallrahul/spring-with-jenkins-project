@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
@@ -20,13 +21,15 @@ public class SpringJenkinsApplication {
 		logger.info("hi........");
 	}
 	@PreDestroy
-	public destroy()
+	public void destroy()
 	{
 		logger.info("destroy method invoked........");
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringJenkinsApplication.class, args);
+		ConfigurableApplicationContext run = SpringApplication.run(SpringJenkinsApplication.class, args);
+		run.close();
+		
 	}
 
 }
